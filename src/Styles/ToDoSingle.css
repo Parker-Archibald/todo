@@ -1,0 +1,43 @@
+#singleTaskContainer {
+    position: relative;
+    margin: 2vw;
+    background-color: white;
+    width: 44vw;
+    height: 30vw;
+    font-size: 5vw;
+    flex: 1;
+    border-radius: 10px;
+    line-height: 30vw;
+    display: inline-block;
+    box-shadow: 2px 2px 4px 1px gray;
+}
+
+#taskName {
+    position: relative;
+    top: -8vw;
+    left: 4vw;
+}
+
+.taskCountNumber {
+    position: absolute;
+    top: 10vw;
+    right: 0;
+    margin-right: 4vw;
+    font-size: 4vw;
+}
+
+#taskCountBar {
+    position: relative;
+    border-bottom: 2px solid var(--secondary-theme-color);
+    top: -11vw;
+    width: 80%;
+    left: 10%; 
+}
+
+.taskCountBarInner {
+    position: relative;
+    border-bottom: 2px solid var(--theme-color);
+    top: .5vw;
+    width: 80%;
+    left: 0%;
+}

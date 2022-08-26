@@ -1,0 +1,122 @@
+/* Delete MOdal Container */
+
+.deleteTodoModalContainer {
+    display: none;
+}
+
+.deleteTodoModalContainerAfter {
+    position: fixed;
+    background-color: white;
+    z-index: 2000;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px 1px gray;
+    animation: openDeleteModal .5s forwards;
+}
+
+.deleteTodoModalContainerAfterClose {
+    position: fixed;
+    background-color: white;
+    z-index: 2000;
+    border-radius: 6px;
+    overflow: hidden;
+    animation: closeDeleteModal .25s forwards;
+}
+
+/* Title */
+
+#deleteTodoModalTitle {
+    position: relative;
+    background-color: var(--theme-color);
+    text-align: center;
+    height: 8vw;
+}
+
+/* Todo Name */
+
+#deleteTodoModalTodo_name {
+    position: relative;
+    display: inline-block;
+
+}
+
+/* Are you sure you want to delete? */
+
+#deleteTodoModalQ {
+    position: relative;
+    top: 2vw;
+    text-align: center;
+    font-size: 5vw;
+}
+
+/* Confirm Delete */
+
+#deleteConfirm {
+    position: relative;
+    text-align: center;
+    font-size: 3vw;
+    top: 1vw;
+    color: red;
+}
+
+/* Confirm Delete button */
+
+#confirmDelete { 
+    position: relative;
+    background-color: var(--theme-color);
+    width: 20vw;
+    height: 6vw;
+    line-height: 6vw;
+    font-size: 2.5vw;
+    border-radius: 10px;
+    text-align: center;
+    top: 4vw;
+    left: 22vw;
+}
+
+/* Cancel Delete button */
+
+#cancelDelete {
+    position: relative;
+    background-color: var(--secondary-theme-color);
+    width: 20vw;
+    height: 6vw;
+    line-height: 6vw;
+    font-size: 2.5vw;
+    border-radius: 10px;
+    text-align: center;
+    top: -2vw;
+    left: 46vw;
+}
+
+/* Open Delete modal */
+
+@keyframes openDeleteModal {
+    from {
+        width: 0vw;
+        height: 0vw;
+        top: 60vw;
+        left: 50vw;
+    }
+    to {
+        width: 90vw;
+        height: 40vw;
+        top: 50vw;
+        left: 5vw;
+    }
+}
+
+@keyframes closeDeleteModal {
+    from {
+        width: 90vw;
+        height: 40vw;
+        top: 50vw;
+        left: 5vw;
+    }
+    to {
+        width: 0vw;
+        height: 0vw;
+        top: 60vw;
+        left: 50vw;
+    }
+}

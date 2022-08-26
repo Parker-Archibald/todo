@@ -1,0 +1,172 @@
+.addTaskModalContainer {
+    display: none;
+}
+
+.addTaskModalContainerAfter {
+    position: absolute;
+    width: 100vw;
+    background-color: white;
+    z-index: 1000;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px 4px rgb(68, 67, 67);
+    animation: openModal .5s forwards;
+}
+
+.addTaskModalContainerAfterClose{
+    position: absolute;
+    width: 100vw;
+    background-color: white;
+    z-index: 1000;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px 4px rgb(68, 67, 67);
+    animation: closeModal .5s forwards;
+}
+
+#addTaskModalExit {
+    position: absolute;
+    left: 80vw;
+    top: 8vw;
+    background-color: var(--secondary-theme-color);
+    width: 16vw;
+    height: 8vw;
+    line-height: 8vw;
+    text-align: center;
+    font-size: 4vw;
+    border-radius: 10px;
+}
+
+/* Open Modal Animation */
+
+@keyframes openModal {
+    from {
+        top:100vh;
+        height: 0vw;
+    }
+    to {
+        top: 40vw;
+        height: 180vw;
+    }
+}
+
+/* Close Modal Animation */
+
+@keyframes closeModal {
+    from {
+        top: 40vw;
+        height: 180vw;
+    }
+    to {
+        top: 100vh;
+        height: 0px;
+        overflow: hidden;
+    }
+}
+
+/* Modal Title */ 
+
+#addTaskModalTitle {
+    position: absolute;
+    top: 6vw;
+    left: 8vw;
+    font-size: 8vw;
+}
+
+
+/* Modal Form */
+
+#addTaskModalForm {
+    position: absolute;
+    /* background-color: var(--theme-color); */
+    background-image: url('./Pictures/modalBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 70vh;
+    top: 12vh;
+    border-radius: 20px;
+}
+
+input {
+    outline: none !important;
+}
+
+/* Task Name Input */
+
+#addTaskTaskName {
+    position: relative;
+    border: none;
+    background-color: white;
+    color: black;
+    top: 10vw;
+    left: 10vw;
+    width: 75vw;
+    height: 12vw;
+    border-radius: 40px;
+    text-indent: 12px;
+}
+
+/* Add Task Date */
+
+#addTaskDate {
+    position: relative;
+    border: none;
+    background-color: white;
+    color: black;
+    top: 20vw;
+    left: 10vw;
+    width: 34vw;
+    height: 12vw;
+    border-radius: 40px;
+    text-indent: 8px;
+}
+
+::-webkit-calendar-picker-indicator { margin-right: 4vw; }
+
+/* Add Task Time */
+
+#addTaskTime {
+    position: relative;
+    border: none;
+    background-color: white;
+    color: black;
+    top: 20vw;
+    left: 12vw;
+    width: 38vw;
+    height: 12vw;
+    border-radius: 40px;
+    text-indent: 8px;
+}
+
+
+/* Add Task Notes */
+
+#addTaskNotes {
+    position: relative;
+    border: none;
+    background-color: white;
+    color: black;
+    width: 65vw;
+    border-radius: 30px;
+    top: 30vw;
+    left: 10vw;
+    min-height: 40vw;
+    font-size: 4vw;
+    outline: none !important;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+/* Add Task Submit Button */
+
+#addTaskSubmit {
+    position: relative;
+    background-color: var(--secondary-theme-color);
+    top: 40vw;
+    left: 12vw;
+    width: 75vw;
+    height: 12vw;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 8vw;
+}

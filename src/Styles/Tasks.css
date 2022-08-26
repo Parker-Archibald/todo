@@ -1,0 +1,57 @@
+#tasksContainer {
+    height: 100vh;
+    background-color: rgb(235, 233, 233);
+}
+
+#tasksTitleBottomBorder {
+    position: relative;
+    width: 100vw;
+    height: 40vw;
+    /* background-color: rgb(113, 253, 253); */
+    background-color: var(--theme-color);
+}
+
+#tasksTitle {
+    position: relative;
+    font-size: 8vw;
+    top: 4vw;
+    left: 4vw;
+}
+
+#tasksAddButton {
+    position: absolute;
+    top: 8vw;
+    right: 0;
+    width: 22vw;
+    height: 6vw;
+    text-align: center;
+    margin-right: 8vw;
+    border-radius: 7px;
+    background-color: var(--secondary-theme-color);
+}
+
+#singleTaskTasks {
+    position: relative;
+    top: 10vw;
+    left: 2vw;
+    width: 100vw;
+    padding-bottom: 2vw;
+    /* text-align: center; */
+}
+
+#tasksWeekCalendarContainer {
+    position: relative;
+    display: flex;
+    top: 10vw;
+    font-size: 6vw;
+    width: 90vw;
+    left: 5vw;
+}
+
+#tasksWeekCalendarSunday, #tasksWeekCalendarMonday, #tasksWeekCalendarTuesday, #tasksWeekCalendarWednesday, #tasksWeekCalendarThursday, #tasksWeekCalendarFriday, #tasksWeekCalendarFriday, #tasksWeekCalendarSaturday {
+    width: 6vw;
+    flex: 1;
+    text-align: center;
+    height: 16vw;
+}
+

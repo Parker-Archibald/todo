@@ -1,0 +1,21 @@
+#singleItemContainer {
+    margin-top: 4vw;
+}
+
+@keyframes openTask {
+    from {
+        height: 8vw;
+    }
+    to {
+        height: 36vw;
+    }
+}
+
+@keyframes closeTask {
+    from {
+        height: 30vw;
+    }
+    to {
+        height: 8vw;
+    }
+}

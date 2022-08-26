@@ -1,0 +1,200 @@
+#singleTaskPageContainer {
+    height: 100vh;
+    background-color: rgb(235, 233, 233);
+}
+
+/* Single Task Top Container */
+
+#singleTaskPageTop {
+    position: relative;
+    background-color: var(--theme-color);
+    width: 100vw;
+    height: 30vw;
+}
+
+/* Single Task Info */
+
+#singleTaskPageTaskName{
+    font-size: 8vw;
+    line-height: 20vw;
+    text-indent: 4vw;
+}
+
+#singleTaskPageTaskDate {
+    position: relative;
+    font-size: 6vw;
+    left: 2vw;
+    text-indent: 4vw;
+}
+
+/* Single Task Add Task Button */
+
+#singleTaskPageAddTask {
+    position: absolute;
+    background-color: var(--secondary-theme-color);
+    width: 24vw;
+    height: 8vw;
+    line-height: 8vw;
+    text-align: center;
+    border-radius: 10px;
+    left: 75vw;
+    top: 7vw;
+}
+
+/* Single Task Modal */
+
+.singleTaskPageTaskItemModal {
+    display: none;
+}
+
+.singleTaskPageTaskItemModalAfter {
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+    z-index: 1001;
+    border-radius: 20px;
+    overflow: hidden;
+    animation: newToDoOpenModal .5s forwards;
+}
+
+.singleTaskPageTaskItemModalAfterClose {
+    position: absolute;
+    width: 100vw;
+    background-color: white;
+    z-index: 1000;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px 4px rgb(68, 67, 67);
+    animation: newToDoCloseModal .5s forwards;
+}
+
+/* Open Modal Animaiton */
+
+@keyframes newToDoOpenModal {
+    from {
+        top:100vh;
+        height: 0vw;
+    }
+    to {
+        top: 30vw;
+        height: 180vw;
+    }
+}
+
+/* Close Modal Animation */
+
+@keyframes newToDoCloseModal {
+    from {
+        top: 40vw;
+        height: 180vw;
+    }
+    to {
+        top: 100vh;
+        height: 0px;
+        overflow: hidden;
+    }
+}
+
+/* Single Task Modal Title */
+
+#singleTaskPageTaskItemModalTitle {
+    position: absolute;
+    top: 6vw;
+    left: 8vw;
+    font-size: 8vw;
+}
+
+/* Single Task Modal Close Button */
+
+#singleTaskPageTaskItemModalCloseButton {
+    position: absolute;
+    left: 80vw;
+    top: 8vw;
+    background-color: var(--secondary-theme-color);
+    width: 16vw;
+    height: 8vw;
+    line-height: 8vw;
+    text-align: center;
+    font-size: 4vw;
+    border-radius: 10px;
+}
+
+/* Single Task Modal Form */
+
+#singleTaskPageTaskItemModalForm {
+    position: absolute;
+    /* background-color: var(--theme-color); */
+    background-image: url('./Pictures/Single_Task_Modal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 70vh;
+    top: 12vh;
+    border-radius: 20px;
+}
+
+input {
+    outline: none !important;
+}
+
+/* Single Task Modal Name */
+
+#singleTaskPageTaskItemModalName {
+    position: relative;
+    border: none;
+    background-color: white;
+    color: black;
+    top: 10vw;
+    left: 11vw;
+    width: 75vw;
+    height: 12vw;
+    border-radius: 40px;
+    text-indent: 12px;
+}
+
+/* Single Task Modal Due Time */
+
+#singleTaskPageTaskItemModalDue {
+    position: relative;
+    border: none;
+    background-color: white;
+    color: black;
+    top: 22vw;
+    left: 30vw;
+    width: 38vw;
+    height: 12vw;
+    border-radius: 40px;
+    text-indent: 8px;
+}
+
+/* Single Task Modal Notes */
+
+#singleTaskPageTaskItemModalNotes {
+    position: relative;
+    border: none;
+    background-color: white;
+    color: black;
+    width: 65vw;
+    border-radius: 30px;
+    top: 35vw;
+    left: 11vw;
+    min-height: 40vw;
+    font-size: 4vw;
+    outline: none !important;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+/* Single Task Modal Submit */
+
+#singleTaskPageTaskItemModalSubmit {
+    position: relative;
+    background-color: var(--secondary-theme-color);
+    top: 50vw;
+    left: 12vw;
+    width: 75vw;
+    height: 12vw;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 8vw;
+}

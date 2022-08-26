@@ -1,0 +1,51 @@
+/* Nav container */
+body {
+    --theme-color: rgb(113, 253, 253);
+    --secondary-theme-color: rgb(255, 140, 128);
+}
+
+#navContainer {
+    position: fixed;
+    width: 100vw;
+    height: 20vw;
+    line-height: 16vw;
+    top: 94vh;
+    font-size: 10vw;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 8px 2px 4px 2px gray ;
+    z-index: 2000;
+}
+
+/* All Nav Icons */
+
+#navIcons {
+    display: flex;  
+}
+
+/* Nav To Do Checklist Icon */
+
+#navTodoIcon {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Nav Schedule Icon */
+
+#navScheduleIcon {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Nav Settings Icon */
+
+#navSettingsIcon {
+    flex: 1;
+    text-align: center;
+}
+
+Link {
+    background-color: yellow;
+}
