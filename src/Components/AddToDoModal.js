@@ -24,7 +24,7 @@ const AddToDoModal = () => {
 
     const handleSubmitToDo = () => {
         
-        fetch(`${TODO_API}/putToDo/${location.state.info.task_name}`, {
+        fetch(`${TODO_API}putToDo/${location.state.info.task_name}`, {
             method: "PUT",
             headers: {
                 "Content-Type": 'application/json'

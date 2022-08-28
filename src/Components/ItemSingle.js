@@ -23,29 +23,29 @@ const ItemSingle = () => {
     });
 
 
-    // useEffect(() => {
-    //     fetch(`${TODO_API}/getTask/${allInfo.all.task_name}`)
-    //     .then(response => {return response.json()})
-    //     .then(response => response.map(task => {
-    //         setInfo(previousData => {
-    //             return {...previousData, items: task.items}
-    //         })
-    //     }))
+    useEffect(() => {
+        fetch(`${TODO_API}getTask/${allInfo.all.task_name}`)
+        .then(response => {return response.json()})
+        .then(response => response.map(task => {
+            setInfo(previousData => {
+                return {...previousData, items: task.items}
+            })
+        }))
 
-    //     allInfo.items.map(item => {
+        allInfo.items.map(item => {
 
-    //         if(item.isCompleted === true || item.isCompleted === 'true') {
-    //             document.getElementById(`${item.todo_name}CheckBox`).checked = true;
-    //         }
-    //     })
+            if(item.isCompleted === true || item.isCompleted === 'true') {
+                document.getElementById(`${item.todo_name}CheckBox`).checked = true;
+            }
+        })
 
-    // })
+    })
     
     const handleUpdateCheckbox = (e) => {
 
         const checkboxChecked = document.getElementById(e.target.id).checked;
         
-        fetch(`${TODO_API}/isCompleted/${allInfo.all.task_name}/${e.target.name}/${checkboxChecked}`, {
+        fetch(`${TODO_API}isCompleted/${allInfo.all.task_name}/${e.target.name}/${checkboxChecked}`, {
             method: "PUT",
             headers: {
                 "Content-Type": 'application/json'
@@ -217,7 +217,7 @@ const ItemSingle = () => {
     const handleConfirmDelete = (e) => {
         const todoItem = document.getElementById('confirmDelete').className;
 
-         fetch(`${TODO_API}/deleteTodo/${allInfo.all.task_name}/${todoItem}`, {
+         fetch(`${TODO_API}deleteTodo/${allInfo.all.task_name}/${todoItem}`, {
             method: 'Delete', 
 
         })
@@ -241,7 +241,7 @@ const ItemSingle = () => {
             notes: allInfo.notes
         }
         
-        fetch(`${TODO_API}/updateTodo/${allItems.task_name}/${oldTodoName}`, {
+        fetch(`${TODO_API}updateTodo/${allItems.task_name}/${oldTodoName}`, {
             method: "Put",
             headers: {
                 "Content-Type": 'application/json'

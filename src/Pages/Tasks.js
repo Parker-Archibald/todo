@@ -11,7 +11,7 @@ class ToDoList extends Component {
     }
 
     componentDidMount = () => {
-        fetch(`${TODO_API}/getAllTasks`)
+        fetch(`${TODO_API}getAllTasks`)
         .then(results => results.json())
         .then(tasks => tasks.map(task => <ToDoSingle allTasks={task}/>))
         .then(tasks => this.setState({singleTask: tasks}))
