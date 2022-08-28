@@ -24,7 +24,7 @@ class AddTaskFrame extends Component {
     
         const handleSubmit = (e) => {
             e.preventDefault();
-            fetch(`${TODO_API}/postTask`, {
+            fetch(`${TODO_API}postTask`, {
                 method: 'Post',
                 headers: {
                     "Content-Type": 'application/json'
