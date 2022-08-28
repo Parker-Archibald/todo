@@ -23,23 +23,23 @@ const ItemSingle = () => {
     });
 
 
-    useEffect(() => {
-        fetch(`${TODO_API}/getTask/${allInfo.all.task_name}`)
-        .then(response => {return response.json()})
-        .then(response => response.map(task => {
-            setInfo(previousData => {
-                return {...previousData, items: task.items}
-            })
-        }))
+    // useEffect(() => {
+    //     fetch(`${TODO_API}/getTask/${allInfo.all.task_name}`)
+    //     .then(response => {return response.json()})
+    //     .then(response => response.map(task => {
+    //         setInfo(previousData => {
+    //             return {...previousData, items: task.items}
+    //         })
+    //     }))
 
-        allInfo.items.map(item => {
+    //     allInfo.items.map(item => {
 
-            if(item.isCompleted === true || item.isCompleted === 'true') {
-                document.getElementById(`${item.todo_name}CheckBox`).checked = true;
-            }
-        })
+    //         if(item.isCompleted === true || item.isCompleted === 'true') {
+    //             document.getElementById(`${item.todo_name}CheckBox`).checked = true;
+    //         }
+    //     })
 
-    })
+    // })
     
     const handleUpdateCheckbox = (e) => {
 
