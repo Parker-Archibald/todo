@@ -38,8 +38,22 @@
     line-height: 8vw;
     text-align: center;
     border-radius: 10px;
+    left: 50vw;
+    top: 20vw;
+}
+
+/* Delete Single Task */
+
+#singleTaskPageDeleteTask {
+    position: absolute;
+    background-color: var(--secondary-theme-color);
+    width: 24vw;
+    height: 8vw;
+    line-height: 8vw;
+    text-align: center;
+    border-radius: 10px;
     left: 75vw;
-    top: 7vw;
+    top: 20vw;
 }
 
 /* Single Task Modal */
