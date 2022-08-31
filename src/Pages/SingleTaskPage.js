@@ -47,7 +47,6 @@ const SingleTaskPage = () => {
             </div>
             <div id='singleTaskPageTaskItem'><ItemSingle info={state}/></div>
             
-            
         </div>
             <div><AddToDoModal info={state}/></div>
             <div><DeleteTaskModal info={state}/></div>

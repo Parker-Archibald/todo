@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useLocation } from "react-router-dom"
 import '../Styles/SingleItem.css';
-import {IoIosArrowForward, IoIosArrowDown} from 'react-icons/io';
+import {IoIosArrowForward, IoIosArrowDown, IoMdSkipForward} from 'react-icons/io';
 import { TODO_API } from '../COM/com';
 import '../Styles/EditToDoModal.css';
 import '../Styles/DeleteTodoModal.css';
@@ -24,6 +24,7 @@ const ItemSingle = () => {
 
 
     useEffect(() => {
+
         fetch(`${TODO_API}getTask/${allInfo.all.task_name}`)
         .then(response => {return response.json()})
         .then(response => response.map(task => {
@@ -36,29 +37,52 @@ const ItemSingle = () => {
 
             if(item.isCompleted === true || item.isCompleted === 'true') {
                 document.getElementById(`${item.todo_name}CheckBox`).checked = true;
+                const completedList = document.getElementById('completedTodosList');
+                const toAppend = document.getElementById(`${item.todo_name}Container`);
+    
+                completedList.parentNode.insertBefore(toAppend, completedList.nextSibling);
+            }
+            else {
+                document.getElementById(`${item.todo_name}CheckBox`).checked = false;
             }
         })
 
-    })
+    }, [])
     
-    const handleUpdateCheckbox = (e) => {
+    async function handleUpdateCheckbox(e) {
 
+        if(e.target.checked === true) {
+            const completedList = document.getElementById('completedTodosList');
+            const toAppend = document.getElementById(e.target.parentNode.id);
+    
+            completedList.parentNode.insertBefore(toAppend, completedList.nextSibling);
+        }
+        else {
+            const completedList = document.getElementById('uncompletedTodosContainer');
+                const toAppend = document.getElementById(e.target.parentNode.id);
+    
+                completedList.parentNode.insertBefore(toAppend, completedList.nextSibling);
+        }
+
+        await makeUpdate(e)
+        
+    }
+
+    async function makeUpdate(e) {
         const checkboxChecked = document.getElementById(e.target.id).checked;
         
-        fetch(`${TODO_API}isCompleted/${allInfo.all.task_name}/${e.target.name}/${checkboxChecked}`, {
+        await fetch(`${TODO_API}isCompleted/${allInfo.all.task_name}/${e.target.name}/${checkboxChecked}`, {
             method: "PUT",
             headers: {
                 "Content-Type": 'application/json'
         }
-        }, [])
-        .then(refresh(200));
+        })
     }
 
     const refresh = (timeoutPeriod) => {
         setTimeout("document.location.reload(true)", timeoutPeriod);
     };
-
-    
+ 
     const handleOpenTodo = (e) => {
             if(document.getElementById(e.target.id).parentElement.style.isOpened === 'false') {
                 document.getElementById(e.target.id).parentElement.style.animation = 'openTask .25s forwards';
@@ -72,7 +96,6 @@ const ItemSingle = () => {
             }
     }
 
-    
     const handleDeleteButtonClose = (e) => {
         document.getElementById('deleteTodoModalContainer').className = 'deleteTodoModalContainerAfterClose';
     }
@@ -94,6 +117,10 @@ const ItemSingle = () => {
                     document.getElementById('editTodoModalNameInput').placeholder = dataForModal.todo_name;
                     document.getElementById('editTodoModalTimeInput').placeholder = dataForModal.time;
                     document.getElementById('editTodoModalNotesInput').placeholder = dataForModal.notes;
+
+                    setInfo(previousData => {
+                        return {...previousData, todo_name: dataForModal.todo_name, time: dataForModal.time, notes: dataForModal.notes}
+                    })
 
                     console.log(dataForModal)
                 }
@@ -199,16 +226,11 @@ const ItemSingle = () => {
                     Delete
                     </div>
                 </div>
-                
             </div>
         </div>
             
         )
     })
-
-    const changeLineColor = (e) => {
-        document.getElementById(e.target.id).style.borderBottom = '1px solid var(--theme-color';
-    }
 
     const handleCloseEditModal = (e) => {
         document.getElementById('editTodoModalContainer').className = 'editTodoModalContainerAfterClose';
@@ -254,7 +276,9 @@ const ItemSingle = () => {
     return(
         <div>
             <div id='singleItemContainer'>
+                <div id='uncompletedTodosContainer'><div id='uncompletedTodosList'>Uncompleted<div id='uncompletedTodoUnderline'/></div></div>
                 {mappedItems}  
+                <div id='completedItemsContainer'><div id='completedTodosList'>Completed<div id='completedTodosUnderline'/></div></div>
             </div>
             <div id='editTodoModalContainer' className='editTodoModalContainer'>       
                 <div id='editTodoModalTitle'>
@@ -265,7 +289,7 @@ const ItemSingle = () => {
                 </div>
                 <div id='editTodoModalName'>
                     Name: 
-                    <input id='editTodoModalNameInput' placeholder='' className='todo_name' onClick={changeLineColor} onChange={handleEditChange}/>
+                    <input id='editTodoModalNameInput' placeholder='' className='todo_name' onChange={handleEditChange}/>
                 </div>
                 <div id='editTodoModalTime'>
                     Due By:
@@ -286,6 +310,7 @@ const ItemSingle = () => {
                     <div id='cancelDelete' onClick={handleDeleteButtonClose}>Cancel!</div>
                 </div>
             </div>
+            
         </div>
     )
 }

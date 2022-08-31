@@ -1,3 +1,22 @@
 #changeColorButton {
     background-color: var(--theme-color);
+    height: 10vh;
+    line-height: 10vh;
+    text-indent: 10vw;
+    font-size: 10vw;
+}
+
+.themeSetting {
+    border-bottom: 1px solid gray;
+    height: 5vh;
+    line-height: 5vh;
+    text-indent: 4vw;
+    overflow: hidden;
+}
+
+.themeSettingAfter {
+    border-bottom: 1px solid gray;
+    height: 20vh;
+    line-height: 5vh;
+    text-indent: 4vw;
 }

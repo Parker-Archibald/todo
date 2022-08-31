@@ -2,6 +2,10 @@
     margin-top: 4vw;
 }
 
+#singleItemContainer:last-child {
+    margin-bottom: 100px;
+}
+
 @keyframes openTask {
     from {
         height: 8vw;
@@ -18,4 +22,39 @@
     to {
         height: 8vw;
     }
+}
+
+#completedItemsContainer{
+    margin-bottom: 100px;
+    
+}
+
+#completedTodosList {
+    position: relative;
+    top: 8vw;
+    width: 100vw;
+    text-indent: 10vw;
+    
+}
+
+#completedTodosUnderline {
+    position: relative;
+    border-bottom: 1px solid gray;
+    width: 90vw;
+    left: 5vw;
+    top: 3vw;
+    margin-bottom: 60px;
+}
+
+#uncompletedTodosList{
+    text-indent: 3vw;
+}
+
+#uncompletedTodoUnderline {
+    position: relative;
+    border-bottom: 1px solid gray;
+    width: 90vw;
+    left: 5vw;
+    top: 3vw;
+    margin-bottom: 30px;
 }

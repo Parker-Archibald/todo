@@ -20,11 +20,31 @@ const Settings = () => {
         body.style.setProperty('--theme-color', state.color)
     }
 
+    const changeColorThemeSecondary = () => {
+        const body = document.querySelector('body');
+
+        body.style.setProperty('--secondary-theme-color', state.color)
+    }
+
+    const openThemeSection = () => {
+        if(document.getElementById('themeSetting').className === 'themeSetting') {
+            document.getElementById('themeSetting').className = 'themeSettingAfter';
+        }
+        else if(document.getElementById('themeSetting').className === 'themeSettingAfter') {
+            document.getElementById('themeSetting').className = 'themeSetting';
+        }
+    }
+
     return(
         <div>
-            <div id='changeColorButton'>
-                <input onChange={handleColorInput}/>
-                <div id='changeColorSubmit' onClick={changeColorTheme}>Submit</div>
+            <div id=''>
+                <div id='changeColorButton'>Settings</div>
+                <div id='themeSetting' className='themeSetting'>
+                    <div id='themeSettingTitle' onClick={openThemeSection}>Themes</div>
+                    <div id='themeSettingPrimary'>Primary: <input type='color' onChange={handleColorInput}/></div>
+                    <div id='themeSettingSecondary'>Secondary: <input type='color' onChange={handleColorInput}/></div>
+                    <div id='changeColorSubmit' onClick={changeColorThemeSecondary}>Submit</div>
+                </div>
             </div>
         </div>
     )
