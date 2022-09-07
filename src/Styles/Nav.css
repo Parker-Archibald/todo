@@ -1,8 +1,8 @@
 /* Nav container */
-body {
+/* body {
     --theme-color: rgb(113, 253, 253);
     --secondary-theme-color: rgb(255, 140, 128);
-}
+} */
 
 #navContainer {
     position: fixed;

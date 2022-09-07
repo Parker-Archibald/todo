@@ -16,7 +16,30 @@
 
 .themeSettingAfter {
     border-bottom: 1px solid gray;
-    height: 20vh;
     line-height: 5vh;
     text-indent: 4vw;
+    overflow: hidden;
+    animation: openThemes .5s forwards;
+}
+
+@keyframes openThemes {
+    from {
+        height: 5vh;
+    }
+    to {
+        height: 20vh;
+    }
+}
+
+#changeColorSubmit {
+    position: relative;
+    background-color: var(--secondary-theme-color);
+    width: 20vw;
+    height: 4vh;
+    line-height: 4vh;
+    text-align: center;
+    text-indent: 0vw;
+    border-radius: 10px;
+    left: 38vw;
+    top: 1vw;
 }

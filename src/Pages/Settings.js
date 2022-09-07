@@ -1,30 +1,44 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../Styles/Settings.css';
+import {TODO_API} from '../COM/com';
 
 
 const Settings = () => {
 
     const [state, setState] = useState({
-        color: ''
+        primaryColor: '',
+        secondaryColor: '',
+        primaryFinal: '',
+        secondaryFinal: ''
     })
 
-    const handleColorInput = (e) => {
-        setState(previousState => {
-            return {...previousState, color: e.target.value}
+    useEffect(() => {
+        fetch(`${TODO_API}getTheme`)
+        .then(results => {return results.json()})
+        .then(results => {
+            const primary = results[0].themeColors.primary
+            const secondary = results[0].themeColors.secondary
+            setState(previousState => {
+                return {...previousState, primaryFinal: primary, secondaryFinal: secondary}
+            })
         })
+        changeColorTheme()
+    }) 
+
+    const handleColorInput = (e) => {     
+
+            setState(previousState => {
+                return {...previousState, [e.target.className]: e.target.value}
+            })
     }
 
     const changeColorTheme = () => {
         const body = document.querySelector('body');
 
-        body.style.setProperty('--theme-color', state.color)
+        body.style.setProperty('--theme-color', state.primaryFinal);
+        body.style.setProperty('--secondary-theme-color', state.secondaryFinal);
     }
 
-    const changeColorThemeSecondary = () => {
-        const body = document.querySelector('body');
-
-        body.style.setProperty('--secondary-theme-color', state.color)
-    }
 
     const openThemeSection = () => {
         if(document.getElementById('themeSetting').className === 'themeSetting') {
@@ -35,15 +49,25 @@ const Settings = () => {
         }
     }
 
+    async function handleSubmitTheme() {
+        await fetch(`${TODO_API}setTheme/${state.primaryColor}/${state.secondaryColor}`, {
+            method: "Put",
+            headers: {
+                "Content-Type": 'application/json'
+            }
+        })
+        .then(alert('Theme changed!'))
+    }
+
     return(
         <div>
             <div id=''>
                 <div id='changeColorButton'>Settings</div>
                 <div id='themeSetting' className='themeSetting'>
                     <div id='themeSettingTitle' onClick={openThemeSection}>Themes</div>
-                    <div id='themeSettingPrimary'>Primary: <input type='color' onChange={handleColorInput}/></div>
-                    <div id='themeSettingSecondary'>Secondary: <input type='color' onChange={handleColorInput}/></div>
-                    <div id='changeColorSubmit' onClick={changeColorThemeSecondary}>Submit</div>
+                    <div id='themeSettingPrimary'>Primary Color: <input onChange={handleColorInput} className = 'primaryColor'/> </div>
+                    <div id='themeSettingSecondary'>SecondaryColor:<input className = 'secondaryColor' onChange={handleColorInput}/> </div>
+                    <div id='changeColorSubmit' onClick={handleSubmitTheme}>Submit</div>
                 </div>
             </div>
         </div>

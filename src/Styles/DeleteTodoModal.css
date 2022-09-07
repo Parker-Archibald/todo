@@ -72,6 +72,7 @@
     text-align: center;
     top: 4vw;
     left: 22vw;
+    border: 1px solid gray;
 }
 
 /* Cancel Delete button */
