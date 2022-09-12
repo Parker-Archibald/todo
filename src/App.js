@@ -14,7 +14,7 @@ function App() {
 })
 
   useEffect(() => {
-    fetch(`${TODO_API}getTheme`)
+      fetch(`${TODO_API}getTheme`)
         .then(results => {return results.json()})
         .then(results => {
             const primary = results[0].themeColors.primary
@@ -27,7 +27,8 @@ function App() {
 
         body.style.setProperty('--theme-color', state.primaryFinal);
         body.style.setProperty('--secondary-theme-color', state.secondaryFinal);
-  })
+
+      });
 
   if(localStorage.isLoggedIn === true || localStorage.isLoggedIn === 'true') {
 
