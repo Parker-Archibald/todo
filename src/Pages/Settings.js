@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import '../Styles/Settings.css';
 import {TODO_API} from '../COM/com';
+import {Link} from 'react-router-dom';
 
 
 const Settings = () => {
@@ -59,6 +60,11 @@ const Settings = () => {
         .then(alert('Theme changed!'))
     }
 
+    const handleLogout = () => {
+        localStorage.userID = '';
+        localStorage.isLoggedIn = false;
+    }
+
     return(
         <div>
             <div id=''>
@@ -70,6 +76,7 @@ const Settings = () => {
                     <div id='changeColorSubmit' onClick={handleSubmitTheme}>Submit</div>
                 </div>
             </div>
+            <div id='logoutButton' onClick={handleLogout}><Link to='/' style={{'color': 'black', 'textDecoration': 'none'}}>Logout</Link></div>
         </div>
     )
 }

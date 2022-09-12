@@ -11,7 +11,11 @@ class ToDoList extends Component {
     }
 
     componentDidMount = () => {
-        fetch(`${TODO_API}getAllTasks`)
+
+        let userId = document.cookie;
+        userId = userId.split('=')
+
+        fetch(`${TODO_API}getAllTasks/${userId[1]}`)
         .then(results => results.json())
         .then(tasks => tasks.map(task => <ToDoSingle allTasks={task}/>))
         .then(tasks => this.setState({singleTask: tasks}));
@@ -23,7 +27,7 @@ class ToDoList extends Component {
         const dayNumber = date.getDay();
             
 
-        if(dayNumber != 0) {
+        if(dayNumber !== 0) {
             let dayDate = date.getDate();
 
             for(let i = dayNumber - 1; i >= 0; i--) {
@@ -31,10 +35,10 @@ class ToDoList extends Component {
                 dayDate -= 1;
             }
         }
-        if(dayNumber != 6) {
+        if(dayNumber !== 6) {
             let dayDate = date.getDate();
 
-            for(let i = dayNumber + 1; i <=6; i++) {
+            for(let i = dayNumber + 1; i <= 6; i++) {
                 document.getElementById(i).innerHTML = dayDate + 1;
                 dayDate += 1;
             }

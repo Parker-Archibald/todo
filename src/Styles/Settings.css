@@ -43,3 +43,11 @@
     left: 38vw;
     top: 1vw;
 }
+
+#logoutButton {
+    border-bottom: 1px solid gray;
+    height: 5vh;
+    line-height: 5vh;
+    text-indent: 4vw;
+    overflow: hidden;
+}

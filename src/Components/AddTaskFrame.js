@@ -23,8 +23,12 @@ class AddTaskFrame extends Component {
         }
     
         const handleSubmit = (e) => {
+
+            let userId = document.cookie;
+            userId = userId.split('=')
+
             e.preventDefault();
-            fetch(`${TODO_API}postTask`, {
+            fetch(`${TODO_API}postTask/${userId}`, {
                 method: 'Post',
                 headers: {
                     "Content-Type": 'application/json'

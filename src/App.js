@@ -4,6 +4,7 @@ import Nav from "./COM/Nav";
 import './Styles/App.css';
 import {useEffect, useState} from 'react';
 import {TODO_API} from './COM/com';
+import Login from "./Pages/Login";
 
 function App() {
 
@@ -28,14 +29,29 @@ function App() {
         body.style.setProperty('--secondary-theme-color', state.secondaryFinal);
   })
 
-  return (
-    <div className="App">
+  if(localStorage.isLoggedIn === true || localStorage.isLoggedIn === 'true') {
+
+    return (
+      <div className="App">
+          <Router>
+            <Nav/>
+            <Routing/>
+          </Router>
+      </div>
+    );
+  }
+
+  else {
+    return(
+      <div className="App">
         <Router>
-          <Nav/>
           <Routing/>
         </Router>
-    </div>
-  );
+      </div>
+    )
+  }
+
+  
 }
 
 export default App;

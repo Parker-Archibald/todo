@@ -1,0 +1,83 @@
+#registerContainer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+#background1New {
+    position: absolute;
+    background-color: var(--secondary-theme-color);
+    width: 200vw;
+    height: 60vh;
+    transform: rotate(45deg);
+    left: -20vw;
+    top: -20vw;
+    opacity: .4;
+}
+
+#background2New {
+    position: absolute;
+    background-color: var(--theme-color);
+    width: 200vw;
+    height: 60vh;
+    transform: rotate(45deg);
+    left: -80vw;
+    top: 103.5vw;
+    opacity: .4;
+}
+
+#registerTitle {
+    position: relative;
+    top: 30vw;
+}
+
+#registerText {
+    position: relative;
+    top: 26vw;
+    font-size: 3vw;
+}
+
+#registerForm {
+    position: relative;
+    top: 40vw;
+}
+
+#registerEmail, #registerPassword, #registerConfirm {
+    margin: 2vw;
+    width: 60vw;
+    height: 5vw;
+    border: none;
+    background-color: aliceblue;
+    border-radius: 8px;
+    text-indent: 2vw;
+}
+
+#registerFirstName, #registerLastName {
+    position: relative;
+    lefT: -.5vw;
+    margin: 2vw;
+    width: 27.5vw;
+    height: 5vw;
+    border: none;
+    background-color: aliceblue;
+    border-radius: 8px;
+    text-indent: 2vw;
+}
+
+#alreadyRegistered {
+    position: relative;
+    font-size: 3vw;
+}
+
+#registerButton {
+    position: relative;
+    background-color: var(--secondary-theme-color);
+    width: 40vw;
+    height: 8vw;
+    line-height: 8vw;
+    left: 30vw;
+    top: 4vw;
+    border-radius: 8px;
+}

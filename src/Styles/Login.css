@@ -1,0 +1,98 @@
+#loginContainer {
+    position: fixed;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+#background1 {
+    position: absolute;
+    background-color: var(--theme-color);
+    width: 200vw;
+    height: 60vh;
+    transform: rotate(45deg);
+    left: -20vw;
+    top: -20vw;
+    opacity: .4;
+}
+
+#background2 {
+    position: absolute;
+    background-color: var(--secondary-theme-color);
+    width: 200vw;
+    height: 60vh;
+    transform: rotate(45deg);
+    left: -80vw;
+    top: 103.5vw;
+    opacity: .4;
+}
+
+#loginWelcome {
+    position: relative;
+    top: 25vh;
+}
+
+#loginText {
+    position: relative;
+    top: 24vh;
+}
+
+#loginForm {
+    position: relative;
+    top: 30vh;
+}
+
+#loginEmailInput, #loginPasswordInput {
+    margin: 2vw;
+    width: 50vw;
+    height: 5vw;
+    border: none;
+    background-color: aliceblue;
+    border-radius: 8px;
+    text-indent: 2vw;
+}
+
+#loginIcon {
+    position: relative;
+    left: 70vw;
+    top: -7.25vw;
+    width: 4px;
+}
+
+#loginRememberMe {
+    position: relative;
+    left: -15vw;
+    top: -1vw;
+    font-size: 2vw;
+}
+
+#rememberMeCheckbox {
+    position: relative;
+    height: 3vw;
+    top: .75vw;
+}
+
+#loginRegister {
+    position: relative;
+    font-size: 2vw;
+    top: -4vw;
+    left: 60vw;
+    border-bottom: 1px solid black;
+    width: 14vw;
+}
+
+#loginRegister:hover {
+    cursor: pointer;
+}
+
+#loginButton {
+    position: relative;
+    background-color: var(--theme-color);
+    width: 20vw;
+    height: 7vw;
+    left: 40vw;
+    top: 2vw;
+    border-radius: 8px;
+}
