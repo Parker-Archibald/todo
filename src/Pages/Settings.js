@@ -10,7 +10,10 @@ const Settings = () => {
         primaryColor: '',
         secondaryColor: '',
         primaryFinal: '',
-        secondaryFinal: ''
+        secondaryFinal: '',
+        first_name: '',
+        last_name: '',
+        email: ''
     })
 
     useEffect(() => {
@@ -23,8 +26,25 @@ const Settings = () => {
                 return {...previousState, primaryFinal: primary, secondaryFinal: secondary}
             })
         })
-        changeColorTheme()
-    }) 
+        changeColorTheme();
+
+        getUser();
+        
+    }, []) 
+
+    async function getUser() {
+
+        let userId = document.cookie;
+        userId = userId.split('=')
+
+        await fetch(`${TODO_API}getUser/${userId[1]}`)
+        .then(results => results.json())
+        .then(results => {
+            setState(previousData => {
+                return {...previousData, first_name: results[0].first_name, last_name: results[0].last_name, email: results[0].email}
+            })
+        })
+    }
 
     const handleColorInput = (e) => {     
 
@@ -65,6 +85,15 @@ const Settings = () => {
         localStorage.isLoggedIn = false;
     }
 
+    const openProfile = () => {
+        if(document.getElementById('profileSetting').className === 'profileSetting') {
+            document.getElementById('profileSetting').className = 'profileSettingAfter';
+        }
+        else {
+            document.getElementById('profileSetting').className = 'profileSetting';
+        }
+    }
+
     return(
         <div>
             <div id=''>
@@ -75,6 +104,12 @@ const Settings = () => {
                     <div id='themeSettingSecondary'>SecondaryColor:<input className = 'secondaryColor' onChange={handleColorInput}/> </div>
                     <div id='changeColorSubmit' onClick={handleSubmitTheme}>Submit</div>
                 </div>
+            </div>
+            <div id='profileSetting' className='profileSetting' onClick={openProfile}>
+                <div id='profileTitle'>Profile</div>
+                <div id='profileFirst_name'>First Name: {state.first_name}</div>
+                <div id='profileLast_name'>Last Name: {state.last_name}</div>
+                <div id='profileEmail'>Email: {state.email}</div>
             </div>
             <div id='logoutButton' onClick={handleLogout}><Link to='/' style={{'color': 'black', 'textDecoration': 'none'}}>Logout</Link></div>
         </div>

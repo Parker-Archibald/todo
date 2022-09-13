@@ -14,7 +14,7 @@
     overflow: hidden;
 }
 
-.themeSettingAfter {
+.themeSettingAfter, .profileSettingAfter {
     border-bottom: 1px solid gray;
     line-height: 5vh;
     text-indent: 4vw;
@@ -45,6 +45,14 @@
 }
 
 #logoutButton {
+    border-bottom: 1px solid gray;
+    height: 5vh;
+    line-height: 5vh;
+    text-indent: 4vw;
+    overflow: hidden;
+}
+
+.profileSetting {
     border-bottom: 1px solid gray;
     height: 5vh;
     line-height: 5vh;

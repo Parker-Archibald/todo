@@ -1,0 +1,88 @@
+#calendarAll {
+    position: absolute;
+    top: -6vw;
+    overflow: hidden;
+}
+
+#calendarContainer {
+    position: relative;
+    width: 100vw;
+}
+
+#calendarTitle {
+    width: 100%;
+    background-color: var(--theme-color);
+    height: 25vw;
+    text-align: center;
+}
+
+#calendarTitleText {
+    position: relative;
+    top: 6vw;
+}
+
+#calendarTitleDesc {
+    position: relative;
+    top: 4vw;
+}
+
+#monthArrowLeft {
+    position: absolute;
+    left: 2vw;
+    top: 10vw;
+}
+
+#monthArrowRight {
+    position: absolute;
+    right: 0;
+    margin-right: 2vw;
+    top: 10vw;
+}
+
+#weekdayNames {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    left: 2vw;
+}
+
+#weekdayNames div {
+    font-size: 5vw;
+    margin: .55vw;
+    width: 12.5vw;
+}
+
+#calendarDays {
+    position: relative;
+    top: 4vw;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .2rem;
+    left: 2vw;
+    height: 45vh;
+}
+
+#calendarDays div {
+    font-size: 1.4rem;
+    margin: .5vw;
+    width: 12.5vw;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    transition: border .2s;
+}
+
+#calendarDays div:hover:not(#today) {
+    border: 1px solid var(--secondary-theme-color);
+}
+
+#today {
+    background-color: var(--secondary-theme-color);
+}
+
+#prev-date, #next-date {
+    opacity: .5;
+}
