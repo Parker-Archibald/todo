@@ -4,17 +4,18 @@ import '../Styles/SingleTaskPage.css';
 import { useLocation } from "react-router-dom";
 
 
-const AddToDoModal = () => {   
+const AddToDoModal = (props) => {   
 
-    const location = useLocation(); 
-    const {from} = location.state.info;
-
+    let userId = document.cookie;
+    userId = userId.split('=');
 
    const [item, setItem] = useState({
+    task_name: props.info.task_name,
     todo_name: "",
     time: "",
     notes: "",
-    isCompleted: false
+    isCompleted: false,
+    userId: userId[1]
    })
 
     const closeModal = () => {
@@ -22,18 +23,32 @@ const AddToDoModal = () => {
         document.getElementById('singleTaskPageContainer').style = 'filter: blur(0px)';
     }
 
-    const handleSubmitToDo = () => {
+    // const handleSubmitToDo = () => {
         
-        fetch(`${TODO_API}putToDo/${location.state.info.task_name}`, {
-            method: "PUT",
+        // fetch(`${TODO_API}putToDo/${props.info.task_name}`, {
+        //     method: "PUT",
+        //     headers: {
+        //         "Content-Type": 'application/json'
+        //     },
+        //     body: JSON.stringify(item)
+        // })
+        // .then(response => {return response.json()})
+        // .then(response => alert(response))
+        // .then(refresh(200));
+
+    // }
+
+    async function handleSubmitToDo() {
+        await fetch(`${TODO_API}newTodo/${item.task_name}`, {
+            method: "Post",
             headers: {
                 "Content-Type": 'application/json'
             },
             body: JSON.stringify(item)
         })
-        .then(response => {return response.json()})
+        .then(results => {return results.json()})
         .then(response => alert(response))
-        .then(refresh(200));
+        .then(refresh(200))
     }
 
     const handleInputChange = (e) => {

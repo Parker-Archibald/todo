@@ -3,12 +3,12 @@ import '../Styles/DeleteTaskModal.css';
 import {useLocation, useNavigate} from 'react-router-dom';
 import { TODO_API } from '../COM/com';
 
-const DeleteTaskModal = () => {
+const DeleteTaskModal = (props) => {
 
     const location = useLocation(); 
     const navigate = useNavigate();
     const [taskName, setTaskName] = useState({
-        task_name: location.state.info.task_name
+        task_name: props.info.task_name
     });
 
     const handleCloseDeleteTask = () => {

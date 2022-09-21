@@ -1,0 +1,64 @@
+.updateContainer {
+    display: none;
+}
+
+.updateContainerAfter {
+    position: fixed;
+    background-color: white;
+    width: 80vw;
+    height: 48vw;
+    z-index: 1000;
+    left: 10vw;
+    top: 60vw;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 2px 4px 4px 2px gray;
+}
+
+#updateTodoTitle {
+    background-color: var(--theme-color);
+    height: 8vw;
+    text-indent: 5vw;
+    line-height: 7vw;
+}
+
+#updateTodoName, #updateTodoTime, #updateTodoNotes {
+    position: relative;
+    left: 2vw;
+}
+
+#todoNameInput, #updateDueBy {
+    position: absolute;
+    left: 15vw;
+    width: 58vw;
+    top: .5vw;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+#updateDueBy {
+    top: 1vw;
+}
+
+#updateNotes {
+    border: 1px solid gray;
+    width: 93%;
+    height: 12vw;
+    overflow: scroll;
+}
+
+#updateButtons {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#updateCancel, #updateConfirm {
+    background-color: var(--secondary-theme-color);
+    margin: 2vw;
+    width: 20vw;
+    border-radius: 8px;
+    height: 7vw;
+    line-height: 7vw;
+}

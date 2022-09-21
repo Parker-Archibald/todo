@@ -17,15 +17,15 @@ const Settings = () => {
     })
 
     useEffect(() => {
-        fetch(`${TODO_API}getTheme`)
-        .then(results => {return results.json()})
-        .then(results => {
-            const primary = results[0].themeColors.primary
-            const secondary = results[0].themeColors.secondary
-            setState(previousState => {
-                return {...previousState, primaryFinal: primary, secondaryFinal: secondary}
-            })
-        })
+        // fetch(`${TODO_API}getTheme`)
+        // .then(results => {return results.json()})
+        // .then(results => {
+        //     const primary = results[0].themeColors.primary
+        //     const secondary = results[0].themeColors.secondary
+        //     setState(previousState => {
+        //         return {...previousState, primaryFinal: primary, secondaryFinal: secondary}
+        //     })
+        // })
         changeColorTheme();
 
         getUser();

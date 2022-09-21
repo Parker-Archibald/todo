@@ -1,0 +1,116 @@
+.todoContainer {
+    background-color: white;
+    overflow: hidden;
+    margin: 5vw;
+    height: 6vw;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px 1px gray;
+}
+
+.todoContainerAfter {
+    background-color: white;
+    overflow: hidden;
+    margin: 5vw;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px 1px gray;
+    animation: openTodo .25s forwards;
+}
+
+.todoContainerClosed {
+    background-color: white;
+    overflow: hidden;
+    margin: 5vw;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px 1px gray;
+    animation: closeTodo .25s forwards;
+}
+
+#todoBox {
+    display: flex;
+}
+
+.todoCheckbox {
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+#todoTitle {
+    position: relative;
+    width: 85%;
+    height: 6.5vw;
+}
+
+#dueByText {
+    position: relative;
+    left: 4vw;
+}
+
+#todoNotesContainer {
+    position: relative;
+    left: 4vw;
+}
+
+#todoNotes {
+    position: relative;
+    border: 1px solid black;
+    width: 90%;
+    height: 15vw;
+    overflow: scroll;
+    margin-top: 2vw;
+}
+
+@keyframes openTodo {
+    from {
+        height: 6vw;
+    }
+    to {
+        height: 45vw;
+    }
+}
+
+@keyframes closeTodo {
+    from {
+        height: 45vw;
+    }
+    to {
+        height: 6vw;
+    }
+}
+
+#todoButtons {
+    position: relative;
+    display: flex;
+    text-align: center;
+    /* background-color: yellow; */
+    width: 40vw;
+    left: 27.5%;
+}
+
+/* Delete todo button */
+
+#deleteTodo, #updateTodo {
+    position: relative;
+    background-color: var(--secondary-theme-color);
+    width: 20vw;
+    margin: 1vw;
+    height: 7vw;
+    line-height: 7vw;
+    border-radius: 8px;
+}
+
+.todoArrow {
+    position: relative;
+    right: 2vw;
+    top: .5vw;
+}
+
+.todoArrow1 {
+    position: relative;
+    right: 2vw;
+    top: .5vw;
+    display: none;
+}
+
+#updateTodoModal {
+    background-color: inherit;
+}

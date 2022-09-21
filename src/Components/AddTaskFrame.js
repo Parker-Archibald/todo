@@ -8,8 +8,10 @@ class AddTaskFrame extends Component {
         task_name: '',
         date: '',
         time: '',
-        notes: ''
+        notes: '',
+        userId: ''
     }
+    
 
     render() {
 
@@ -28,7 +30,7 @@ class AddTaskFrame extends Component {
             userId = userId.split('=')
 
             e.preventDefault();
-            fetch(`${TODO_API}postTask/${userId}`, {
+            fetch(`${TODO_API}postTask/${userId[1]}`, {
                 method: 'Post',
                 headers: {
                     "Content-Type": 'application/json'

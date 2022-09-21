@@ -1,5 +1,11 @@
-#singleTaskPageContainer {
+#singleTaskAll {
     height: 100vh;
+    background-color: rgb(235, 233, 233);
+    overflow: scroll;
+    margin-bottom: 15vw;
+}
+#singleTaskPageContainer {
+    height: 100%;
     overflow-x: hidden;
     background-color: rgb(235, 233, 233);
 }
@@ -213,3 +219,18 @@ input {
     text-align: center;
     font-size: 8vw;
 }
+
+#uncompletedTitle, #completedTitle {
+    position: relative;
+    border-bottom: 1px solid gray;
+    width: 90vw;
+    top: 2vw;
+    left: 5vw;
+    padding-bottom: 2vw;
+    
+}
+
+#completedTitle {
+    /* margin-bottom: 100px; */
+}
+

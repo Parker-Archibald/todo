@@ -1,0 +1,55 @@
+.deleteTodoContainer {
+    display: none;
+}
+
+.deleteTodoContainerAfter {
+    position: fixed;
+    background-color: white;
+    width: 80vw;
+    height: 35vw;
+    z-index: 1000;
+    left: 10vw;
+    top: 60vw;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 2px 4px 4px 2px gray;
+}
+
+#deleteTitle {
+    background-color: var(--theme-color);
+    height: 8vw;
+    text-indent: 5vw;
+    line-height: 7vw;
+}
+
+#deleteText {
+    position: relative;
+    font-size: 4vw;
+    text-align: center;
+    top: 2vw;
+}
+
+#deleteWarning {
+    position: relative;
+    font-size: 3vw;
+    text-align: center;
+    top: 2vw;
+    color: red;
+}
+
+#deleteButtons {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    top: 2vw;
+}
+
+#confirmDelete, #cancelDelete {
+    background-color: var(--secondary-theme-color);
+    margin: 2vw;
+    width: 20vw;
+    border-radius: 8px;
+    height: 7vw;
+    line-height: 7vw;
+}
