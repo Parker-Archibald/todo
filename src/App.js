@@ -28,7 +28,7 @@ function App() {
         body.style.setProperty('--theme-color', state.primaryFinal);
         body.style.setProperty('--secondary-theme-color', state.secondaryFinal);
 
-      });
+      }, []);
 
   if(localStorage.isLoggedIn === true || localStorage.isLoggedIn === 'true') {
 
